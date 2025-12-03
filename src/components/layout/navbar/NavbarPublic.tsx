@@ -29,7 +29,7 @@ export default function NavbarPublic({ scrolled }: NavbarPublicProps) {
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-4 md:px-8">
         <Link href="/" className="text-lg font-semibold">
-          Collabnova
+          Collab<span className="text-primary">Nova</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

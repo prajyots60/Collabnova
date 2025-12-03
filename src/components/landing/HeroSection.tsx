@@ -21,7 +21,7 @@ export function HeroSection({ onSearch }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-[120px] px-4 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center pt-20 pb-28 px-4 overflow-hidden">
       {/* Background Visual */}
       <HeroBackground />
 
