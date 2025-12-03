@@ -50,7 +50,7 @@ function AnimatedBorderCard({ children }: { children: React.ReactNode }) {
 
 export function CTASection() {
   return (
-    <section className="py-20 md:py-28 px-4 relative overflow-hidden">
+    <section className="py-20 md:py-28 px-4 relative overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
       {/* Background effects */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px]" />

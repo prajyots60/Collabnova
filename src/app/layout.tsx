@@ -29,7 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="dark" 
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           <ReactQueryProvider>
             <div className="flex min-h-screen flex-col bg-background">
               <Navbar />

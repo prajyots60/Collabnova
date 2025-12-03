@@ -136,7 +136,7 @@ export function HowItWorksSection() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={containerRef} className="py-20 md:py-28 px-4 relative overflow-hidden bg-muted/30">
+    <section ref={containerRef} className="py-20 md:py-28 px-4 relative overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
       {/* Animated background shape */}
       <motion.div 
         className="absolute top-1/4 -left-64 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl"

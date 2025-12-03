@@ -2,25 +2,42 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
 export default function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const currentTheme = theme === "system" ? resolvedTheme : theme;
-  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+  const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
+
+  // Avoid hydration mismatch by only rendering after mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="icon" className="rounded-full" disabled>
+        <Sun className="size-4" />
+        <span className="sr-only">Toggle theme</span>
+      </Button>
+    );
+  }
 
   return (
     <Button
       variant="ghost"
       size="icon"
       aria-label="Toggle theme"
-      onClick={() => setTheme(nextTheme ?? "light")}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       className="rounded-full"
     >
-      <Sun className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Switch theme</span>
+      {resolvedTheme === "dark" ? (
+        <Sun className="size-4" />
+      ) : (
+        <Moon className="size-4" />
+      )}
+      <span className="sr-only">Switch to {resolvedTheme === "dark" ? "light" : "dark"} mode</span>
     </Button>
   );
 }

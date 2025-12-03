@@ -72,17 +72,21 @@ export function Footer() {
           >
             <h3 className="text-lg font-semibold text-foreground mb-4">Stay updated</h3>
             <p className="text-sm text-muted mb-4">Get the latest news and updates from CollabNova</p>
-            <form className="flex gap-2">
+            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
               <div className="relative flex-1">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" />
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  autoComplete="off"
+                  data-form-type="other"
+                  suppressHydrationWarning
                   className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder:text-muted focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
               <button
                 type="submit"
+                suppressHydrationWarning
                 className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary-hover transition-colors"
               >
                 Subscribe

@@ -189,7 +189,7 @@ export function TestimonialsSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section ref={containerRef} className="py-20 md:py-28 relative overflow-hidden bg-muted/30">
+    <section ref={containerRef} className="py-20 md:py-28 relative overflow-hidden">
       <motion.div style={{ opacity }}>
         <div className="max-w-6xl mx-auto px-4 mb-16">
           {/* Section Header */}
