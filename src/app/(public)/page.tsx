@@ -1,3 +1,9 @@
+import { HeroSection } from "@/components/landing";
+
 export default function Page() {
-  return null;
+  return (
+    <main>
+      <HeroSection />
+    </main>
+  );
 }
